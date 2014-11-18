@@ -134,16 +134,17 @@ public class POJ_1980{
 		searchQueue = new LinkedList<SearchState>();
 		success = new ArrayList<SearchState>();
 		
-		Fraction init = new Fraction(keyboard.nextInt(), keyboard.nextInt());
+		globalFractionTarget = new Fraction(keyboard.nextInt(), keyboard.nextInt());
 		globalMultiplicationLimit = keyboard.nextInt();
 		globalFractionLimit = keyboard.nextInt();
 		
-		SearchState st = new SearchState();
-		st.fractions.add(init);
-		
-		globalFractionTarget = init;
-		
-		searchQueue.add(st);
+		for (int i=2; i<globalMultiplicationLimit; i++){
+			Fraction f = new Fraction(1, i);
+			SearchState s = new SearchState();
+			s.fractions.add(f);
+			
+			searchQueue.add(s);
+		}
 		
 		while(!searchQueue.isEmpty()){
 			runSearch();
