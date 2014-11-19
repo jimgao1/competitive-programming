@@ -66,6 +66,7 @@ public class POJ_1980{
 		}
 		
 		public void printInfo(){
+
 			System.out.println();
 			System.out.println("-SearchState Instance-");
 			System.out.println("Fractions: " + this.fractions.size());
@@ -82,7 +83,7 @@ public class POJ_1980{
 	public static void runSearch(){
 		SearchState s = searchQueue.poll();
 		
-		s.printInfo();
+		//s.printInfo();
 		
 		/*
 		 * 		Check if valid
@@ -102,9 +103,9 @@ public class POJ_1980{
 		 */
 		
 		//if (globalFractionLimit - s.getFractionCount() == 0) return;
-		if (globalFractionTarget.getValue() - s.getTotalValue() 
-				> globalFractionLimit - s.getFractionCount()) return;
-		if (globalFractionTarget.getValue() > s.getTotalValue()) return;
+		//if (globalFractionTarget.getValue() - s.getTotalValue() 
+		//		> globalFractionLimit - s.getFractionCount()) return;
+		if (globalFractionTarget.getValue() < s.getTotalValue()) return;
 		if (s.getFractionCount() > globalFractionLimit) return;
 		if (s.getMultiplication() > globalMultiplicationLimit) return;
 		
@@ -150,6 +151,16 @@ public class POJ_1980{
 			runSearch();
 		}
 		
-		System.out.println(success.size());
+		for (int i=0; i<success.size(); i++){
+			System.out.println("Solution #" + i);
+			System.out.println("Fraction Count: " + success.get(i).fractions.size());
+			
+			for (int j=0; j<success.get(i).fractions.size(); j++){
+				System.out.printf("%d / %d, " , success.get(i).fractions.get(j).number1,
+						success.get(i).fractions.get(j).number2);  
+			}
+			
+			System.out.println("\n");
+		}
 	}
 }
