@@ -1,5 +1,5 @@
 /*
- * 		PROGRAM NOT COMPLETE
+ * 		PROGRAM "MAYBE" WORKING
  * 		Problem URL: http://poj.org/problem?id=1980
  */
 
