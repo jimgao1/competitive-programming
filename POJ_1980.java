@@ -72,7 +72,9 @@ public class POJ_1980{
 			System.out.println("Fractions: " + this.fractions.size());
 			
 			for (int i=0; i<this.fractions.size(); i++){
-				System.out.println("Fraction #" + i + ": " + this.fractions.get(i).number1 + " / " + this.fractions.get(i).number2);
+				System.out.println("Fraction #" + i + ": " + 
+						this.fractions.get(i).number1 + " / " + 
+						this.fractions.get(i).number2);
 			}
 			
 			System.out.println("\n-End of Instance");
@@ -147,9 +149,7 @@ public class POJ_1980{
 			searchQueue.add(s);
 		}
 		
-		while(!searchQueue.isEmpty()){
-			runSearch();
-		}
+		while(!searchQueue.isEmpty()) runSearch();
 		
 		for (int i=0; i<success.size(); i++){
 			System.out.println("Solution #" + i);
