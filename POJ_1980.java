@@ -101,7 +101,7 @@ public class POJ_1980{
 		 * 		"Leaf cutting" step
 		 */
 		
-		if (globalFractionLimit - s.getFractionCount() == 0) return;
+		//if (globalFractionLimit - s.getFractionCount() == 0) return;
 		if (globalFractionTarget.getValue() - s.getTotalValue() 
 				> globalFractionLimit - s.getFractionCount()) return;
 		if (globalFractionTarget.getValue() > s.getTotalValue()) return;
@@ -109,9 +109,9 @@ public class POJ_1980{
 		if (s.getMultiplication() > globalMultiplicationLimit) return;
 		
 		
-		int maxDenominator = globalMultiplicationLimit / s.getMultiplication();
+		int maxDenominator = (int)globalMultiplicationLimit / s.getMultiplication();
 		
-		for (int i=1; i<(maxDenominator + 1); i++){
+		for (int i=s.fractions.get(s.fractions.size() - 1).number2; i<(maxDenominator + 1); i++){
 			Fraction f = new Fraction(1, i);
 			SearchState st = s.fork();
 			st.fractions.add(f);
