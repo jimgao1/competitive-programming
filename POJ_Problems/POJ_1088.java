@@ -26,6 +26,8 @@ public class POJ_1088 {
                 if (y < 0 || y >= sizeY) return;
                 if (steps > sizeX * sizeY) return;
                 
+                
+                
                 int current = getElement(x, y);
                 
                 int up = getElement(x, y - 1);
@@ -37,6 +39,8 @@ public class POJ_1088 {
                 if (down != -1 && down < current) search(x, y + 1, steps + 1);
                 if (left != -1 && left < current) search(x - 1, y, steps + 1);
                 if (right != -1 && right < current) search(x + 1, y, steps + 1);
+                
+                if (steps > maxLength) maxLength = steps;
                 
                 return;
         }
@@ -57,5 +61,15 @@ public class POJ_1088 {
                                 map[j][i] = line.charAt(j);
                         }
                 }
+                
+                maxLength = 0;
+                
+                for (int i=0; i<sizeY; i++){
+                        for (int j=0; j<sizeX; j++){
+                                search(j, i, 1);
+                        }
+                }
+                
+                System.out.println(maxLength);
         }
 }
