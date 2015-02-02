@@ -9,6 +9,8 @@ public class LineSegmentTree{
 		public int nStart;
 		public int nEnd;
 		
+		public int addMark;
+		
 		public LSTNode(){}
 		public LSTNode(int s, int e){
 			this.nStart = s;
@@ -112,6 +114,40 @@ public class LineSegmentTree{
 		
 		segmentTree[current].nodeValue = 
 				segmentTree[current * 2 + 1].nodeValue + segmentTree[current * 2 + 2].nodeValue;
+	}
+	
+	public static void updateRange(int current, int uStart, int uEnd, int diff){
+		int nStart = segmentTree[current].nStart;
+		int nEnd = segmentTree[current].nEnd;
+		
+		if (uStart > nEnd || uEnd < nStart)
+			return;
+		
+		if (uStart <= nStart && uEnd >= nEnd){
+			segmentTree[current].addMark += diff;
+			segmentTree[current].nodeValue += diff;
+			
+			return;
+		}
+		
+		pushDown(current);
+		
+		int mid = (nStart + nEnd) / 2;
+		
+		updateRange(current * 2 + 1, uStart, uEnd, diff);
+		updateRange(current * 2 + 2, uStart, uEnd, diff);
+	}
+	
+	public static void pushDown(int current){
+		if (segmentTree[current].addMark != 0){
+			segmentTree[current * 2 + 1].addMark += segmentTree[current].addMark;
+			segmentTree[current * 2 + 2].addMark += segmentTree[current].addMark;
+			
+			segmentTree[current * 2 + 1].nodeValue += segmentTree[current].addMark;
+			segmentTree[current * 2 + 2].nodeValue += segmentTree[current].addMark;
+			
+			segmentTree[current].addMark = 0;
+		}
 	}
 	
 	public static void printLST(){
