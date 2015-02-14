@@ -22,4 +22,4 @@ public static class FastScanner {
         int nextInt() {
             return Integer.parseInt(next());
         }
-	}
+}
