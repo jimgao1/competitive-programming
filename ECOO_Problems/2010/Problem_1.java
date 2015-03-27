@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class Problem_3 {
+public class Problem_1 {
 	
 	public static void main(String[] args) throws Exception{
 		Scanner keyboard = new Scanner(new File("input3.txt"));
