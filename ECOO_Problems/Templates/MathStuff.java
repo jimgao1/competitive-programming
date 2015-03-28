@@ -45,8 +45,4 @@ public class MathStuff {
 		return decToBase(baseToDec(num, baseA), baseB);
 	}
 	
-	public static void main(String[] args){
-		System.out.println(baseToDec("FUCK", 36));
-		System.out.println(decToBase(739172, 36));
-	}
 }
