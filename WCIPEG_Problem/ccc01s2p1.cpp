@@ -1,8 +1,4 @@
 
-/*
-		THIS IS NOT WORKING
-*/
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -14,30 +10,24 @@ using namespace std;
 map<int, int> path;
 unsigned long int cycle;
 
-unsigned long int gcd(int a, int b)
+unsigned long int gcd(unsigned long int m, unsigned long int n)
 {
-    for (;;)
-    {
-        if (a == 0) return b;
-        b %= a;
-        if (b == 0) return a;
-        a %= b;
-    }
+	int tmp;
+	while (m) { tmp = m; m = n % m; n = tmp; }
+	return n;
 }
 
-unsigned long int lcm(int a, int b)
+unsigned long int lcm(unsigned long int m, unsigned long int n)
 {
-    int temp = gcd(a, b);
-
-    return temp ? (a / temp * b) : 0;
+	return m / gcd(m, n) * n;
 }
 
 unsigned long int getCycleLength(int source){
 	int current = path[source];
 	int steps = 1;
 
-	while(true){
-		cout << "source = " << source << ", current = " << current << ", steps = " << steps << endl;
+	while (true){
+		//cout << "source = " << source << ", current = " << current << ", steps = " << steps << endl;
 
 		if (source == current) return steps;
 
@@ -50,21 +40,23 @@ unsigned long int getCycleLength(int source){
 
 int main(){
 
-	while(true){
+	while (true){
 		int nodeCount;
 		cin >> nodeCount;
 
 		if (nodeCount == 0) break;
 
+		cycle = 1;
+
 		vector<int> nodes;
 
-		for (int i=0; i<nodeCount; i++){
+		for (int i = 0; i<nodeCount; i++){
 			int a, b;
 			cin >> a >> b;
 
 			path[a] = b;
 
-			if (!binary_search(nodes.begin(), nodes.end(), a)) 
+			if (!binary_search(nodes.begin(), nodes.end(), a))
 				nodes.push_back(a);
 
 			if (!binary_search(nodes.begin(), nodes.end(), b))
@@ -72,11 +64,12 @@ int main(){
 		}
 
 		for (int n : nodes){
-			cout << "computing node " << n << endl;
+			//cout << "computing node " << n << endl;
 			cycle = lcm(cycle, getCycleLength(n));
-			cout << "done..." << endl;
+			//cout << "done..." << endl;
 		}
 
 		cout << cycle << endl;
 	}
+
 }
