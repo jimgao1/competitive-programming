@@ -48,7 +48,7 @@ vector<int> topological_sort(){
 				matrix[j][currentNode] = -1;
 			}
 
-            result.push_back(currentNode);
+            		result.push_back(currentNode);
 		}
 	}
 }
