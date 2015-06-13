@@ -14,7 +14,7 @@ My code is organized in folders by website, including:
 
 > UVaOJ (University of Valladolid http://uva.onlinejudge.org/)
 
-> WCIPEG (Programming Entertainment Group http://wcipeg.com/)
+> WCIPEG (Programming Enrichment Group http://wcipeg.com/)
 
 Everyone is welcomed to reference my code, and also use it. Just remember to give me credit for it. 
 
