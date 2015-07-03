@@ -1,13 +1,14 @@
-//poj 2479 Maximum sum
-//2013-05-01-17.26
-#include <stdio.h>
-#include <string.h>
+
+#include <cstdio>
+#include <string>
 #include <algorithm>
+#define MAXN 50005
+
 using namespace std;
-const int maxn = 50005;
-int dplift[maxn];
-int dpright[maxn];
-int a[maxn];
+
+int dp_left[MAXN];
+int dp_right[MAXN];
+int a[MAXN];
 
 int main()
 {
@@ -16,38 +17,45 @@ int main()
     while (t--)
     {
         scanf("%d", &n);
-        for (int i = 1; i <= n; i++)
+        for (int i = 0; i < n; i++)
         {
             scanf("%d", &a[i]);
         }
 
-        dplift[1] = a[1];
-        for (int i = 2; i <= n; i++)
-        {
-            if (dplift[i-1] > 0)
-                dplift[i] = dplift[i-1] + a[i];
-            else
-                dplift[i] = a[i];
-        }
-        for (int i = 2; i <= n; i++)
-            dplift[i] = max(dplift[i], dplift[i-1]);
+        dp_left[0] = a[0];
 
-        dpright[n] = a[n];
-        for (int i = n-1; i >= 1; i--)
+        for (int i = 1; i <= n; i++)
         {
-            if (dpright[i+1] > 0)
-                dpright[i] = dpright[i+1] + a[i];
+            if (dp_left[i - 1] > 0)
+                dp_left[i] = dp_left[i - 1] + a[i];
             else
-                dpright[i] = a[i];
+                dp_left[i] = a[i];
         }
-        for (int i = n-1; i >= 1; i--)
-            dpright[i] = max(dpright[i+1], dpright[i]);
 
-        int ans = dplift[1] + dpright[2];
-        for (int i = 2; i < n; i++)
+        for (int i = 1; i < n; i++)
+            dp_left[i] = max(dp_left[i], dp_left[i - 1]);
+
+
+        dp_right[n - 1] = a[n - 1];
+
+        for (int i = n - 2; i >= 0; i--)
         {
-            ans = max(dplift[i]+dpright[i+1], ans);
+            if (dp_right[i + 1] > 0)
+                dp_right[i] = dp_right[i + 1] + a[i];
+            else
+                dp_right[i] = a[i];
         }
+
+        for (int i = n - 2; i >= 0; i--)
+            dp_right[i] = max(dp_right[i + 1], dp_right[i]);
+
+        int ans = dp_left[0] + dp_right[1];
+
+        for (int i = 1; i < n - 1; i++)
+        {
+            ans = max(dp_left[i]+dp_right[i+1], ans);
+        }
+
         printf("%d\n", ans);
     }
     return 0;
