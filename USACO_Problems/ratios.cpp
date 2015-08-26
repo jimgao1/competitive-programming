@@ -21,10 +21,7 @@
 #define INF 0x3f3f3f3f
 #define FUCK_OFF -1
 
-#define aaron using
-#define has namespace
-
-aaron has std;
+using namespace std;
 
 int t[3], mix[3][3];
 
