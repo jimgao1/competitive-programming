@@ -1,3 +1,7 @@
+/*
+    Refer to this page: https://www.quora.com/How-do-I-implement-a-2D-binary-indexed-tree-for-range-update-and-range-query-operations
+*/
+
 
 #include <bits/stdc++.h>
 
