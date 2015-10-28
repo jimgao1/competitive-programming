@@ -22,6 +22,6 @@ My code is organized in folders by website, including:
 
 Everyone is welcomed to reference my code, and also use it. Just remember to give me credit for it. 
 
-If you have any questions or comments, you can reach me at jimthenerd@hotmail.com
+If you have any questions or comments, you can reach me at admin@jimgao.me
 
 Thank you and have fun!
