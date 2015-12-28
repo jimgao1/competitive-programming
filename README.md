@@ -1,4 +1,4 @@
-programming
+competitive-programming
 ===========
 
 Welcome to my competitive programming repository. You can find my solutions to programming problems, and also sample code for algorithms i am learning.
