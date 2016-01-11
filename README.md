@@ -1,7 +1,7 @@
 competitive-programming
 ===========
 
-Welcome to my competitive programming repository. You can find my solutions to programming problems, and also sample code for algorithms i am learning.
+Welcome to my competitive programming repository. You can find my solutions to programming problems, and also sample code for algorithms I am learning.
 
 You can find additional resources and programs on my website `http://jimgao.me/`
 
