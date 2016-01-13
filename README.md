@@ -1,7 +1,7 @@
 competitive-programming
 ===========
 
-Hello World
+Hello World!
 
 Welcome to my competitive programming repository. You can find my solutions to programming problems, and also sample code for algorithms I am learning.
 
