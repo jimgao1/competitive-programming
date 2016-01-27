@@ -5,20 +5,11 @@
 
 using namespace std;
 
-int N, in[26];
-bool visited[26], used[26], matrix[101][101];
+int N;
+bool used[26];
 set<char> elements[26], sets[26];
 
-inline int id(char c) {
-    if (c >= 'a' && c <= 'z')
-        return c - 'a' + 26;
-    return c - 'A';
-}
-
 int main(){
-    memset(visited, 1, sizeof visited);
-    memset(matrix, 0, sizeof matrix);
-
     cin >> N;
     for (int i = 0; i < N; i++){
         char sa, sb;
