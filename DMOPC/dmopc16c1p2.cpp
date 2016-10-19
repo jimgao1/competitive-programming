@@ -23,11 +23,7 @@ int main(){
 
         ext.insert({m, b});
 
-        if (cnt.find(m) != cnt.end()){
-            cnt[m] ++;
-        } else {
-            cnt[m] = 1;
-        }
+	cnt[m]++;
     }
 
     ll fuckshit = 0;
