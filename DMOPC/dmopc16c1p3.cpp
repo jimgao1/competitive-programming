@@ -1,5 +1,5 @@
 
-#include <bits/stdc++.h>
+#include <cstdio>
 
 #define INF 0x3f3f3f3f
 #define MAXN 10005
@@ -10,12 +10,13 @@ int N;
 double dp[MAXN], val[MAXN];
 
 int main(){
-    //freopen("input.txt", "r", stdin);
-
     for (int i = 0; i < MAXN; i++) dp[i] = INF;
 
-    cin >> N;
-    for (int i = 1; i <= N; i++) cin >> val[i];
+    scanf("%d", &N);
+    for (int i = 1, x; i <= N; i++) {
+        scanf("%d", &x);
+        val[i] = (double)(x);
+    }
 
     val[0] = dp[0] = 0;
     for (int i = 1; i <= N + 1; i++){
