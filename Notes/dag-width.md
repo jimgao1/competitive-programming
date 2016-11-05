@@ -17,5 +17,5 @@ Not unique.
 ##### Method 1: Max Flow
 [code](https://github.com/jimgao1/competitive-programming/blob/master/USACO/stall4.cpp)
 
-##### Method 2: DFS
-
+##### Method 2: Hungarian Algorithm (DFS)
+Alternating Path: A path in the bipartite graph alternating between matching and not matching. The number of matches can be increased by 1 by flipping the matching and non-matching edges. 
