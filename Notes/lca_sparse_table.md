@@ -25,5 +25,20 @@ void dfs(int cur, int prev){
 }
 ```
 
+#### Step 2: Building the `dp` array
+```cpp
+int dp[MAXN][LOG_MAXN];
+
+void build(){
+	for (int i = 1; i < LOG_MAXN; i++){
+		for (int j = 0; j < N; j++){
+			if (dp[j][i - 1] != -1){
+				dp[j][i] = dp[ dp[j][i - 1] ][i - 1];
+			}
+		}
+	}
+}
+```
+
 After that, we can simply loop through the `dp` array with a decreasing depth. The last pair of equivalent nodes in this process is the lowest common ancestor. 
 
