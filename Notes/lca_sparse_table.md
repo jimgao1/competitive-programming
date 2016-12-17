@@ -42,3 +42,30 @@ void build(){
 
 After that, we can simply loop through the `dp` array with a decreasing depth. The last pair of equivalent nodes in this process is the lowest common ancestor. 
 
+#### Step 3: Calculating LCA
+
+```cpp
+int lca(int na, int nb){
+	//Ensure that nb is deeper than na
+	if (depth[na] < depth[nb]) swap(na, nb);
+
+	//Raise the 2 nodes to the same depth
+	for (int i = LOG_MAXN - 1; i >= 0; i--){
+		if (dp[na][i] != -1 && depth[dp[na][i]] >= depth[nb]){
+			na = dp[na][i];
+		}
+	}
+
+	if (na == nb) return na;
+
+	for (int i = LOG_MAXN - 1; i >= 0; i--){
+		if (dp[na][i] != -1 && dp[nb][i] != 1 && dp[na][i] != dp[nb][i]){
+			na = dp[na][i], nb = dp[nb][i];
+		}
+	}
+
+	return dp[na][0];
+}
+```
+
+
