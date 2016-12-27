@@ -1,4 +1,4 @@
-[200~#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 #define MAXN 200001
 
@@ -39,4 +39,4 @@ int main(){
         }
         printf("Case #%d: %d\n", c, ans);
     }
-}[201~
+}
