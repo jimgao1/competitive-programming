@@ -1,4 +1,4 @@
-[200~
+
 #include <bits/stdc++.h>
 
 #define MAXN 100000
@@ -53,4 +53,4 @@ int main(){
         cout << cost(dist1[B] + dist2[C]) << endl;
     }
 }
-[201~
+
