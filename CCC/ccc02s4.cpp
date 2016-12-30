@@ -1,4 +1,4 @@
-[200~
+
 #include <bits/stdc++.h>
 
 #define MAXN 101
@@ -47,4 +47,4 @@ int main(){
     }
 
 }
-[201~
+
