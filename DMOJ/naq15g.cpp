@@ -1,11 +1,4 @@
 
-/*
-    Hi Bruce,
-        if you are reading this, can you please tell me when the makeup class is?
-
-    Thanks,
-    Jim :)
-*/
 
 #include <bits/stdc++.h>
 
