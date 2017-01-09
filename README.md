@@ -4,10 +4,10 @@ competitive-programming
 Hello World!
 
 This is my repository for contest solutions, as well as my templates that could be useful
-in programming competitions. 
+in programming competitions.
 
 The solutions for various problems are organized by the source of the problems in different
-folders. 
+folders.
 
 > Algorithms (Templates for algorithms and data structures)
 
@@ -28,6 +28,8 @@ folders.
 > FHC (Facebook Hacker Cup)
 
 > IOI (International Olympiads of Informatics)
+
+> NOI (National Olympiads in Informatics (China))
 
 > POJ (Peking University Online Judge)
 
