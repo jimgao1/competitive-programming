@@ -29,6 +29,8 @@ folders.
 
 > IOI (International Olympiads of Informatics)
 
+> Kattis (Kattis Online Judge)
+
 > NOI (National Olympiads in Informatics (China))
 
 > POJ (Peking University Online Judge)
