@@ -6,13 +6,13 @@ using namespace std;
 
 struct {
 	int l, r, val, lazy;
-	int nodes() { return l - r + 1; }
+	int nodes() { return r - l + 1; }
 } segtree[MAXN * 4];
 
 int N, A[MAXN];
 
 void build(int id, int left, int right){
-	node[id].l = l, node[id].r = r;
+	node[id].l = left, node[id].r = right;
 	node[id].lazy = 0;
 
 	if (left != right){
