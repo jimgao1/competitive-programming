@@ -1,5 +1,4 @@
 
-[3;2~
 #include <bits/stdc++.h>
 
 #define INF 1e18
