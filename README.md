@@ -11,6 +11,8 @@ folders.
 
 > Algorithms (Templates for algorithms and data structures)
 
+> APIO (Asia-Pacific Informatics Olympiad)
+
 > CCC (Canadian Computing Competition)
 
 > CCO (Canadian Computing Olympiads)
