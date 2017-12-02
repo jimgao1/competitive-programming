@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -21,12 +22,10 @@ int main(){
 
     for (int i = N - 2; i >= 0; i--){
         for (int j = 1; j < N - 1; j++){
-
-
-            if (c[i][j] == '#' && c[i + 1][j] == '#' && c[i + 1][j - 1] == '#' && c[i 
-+ 1][j + 1] == '#')
-                dp[i][j] += min(dp[i + 1][j - 1], min(dp[i + 1][j], dp[i + 1][j + 
-1]));
+                
+                
+            if (c[i][j] == '#' && c[i + 1][j] == '#' && c[i + 1][j - 1] == '#' && c[i + 1][j + 1] == '#')
+                dp[i][j] += min(dp[i + 1][j - 1], min(dp[i + 1][j], dp[i + 1][j + 1]));
         }
     }
 
