@@ -30,6 +30,7 @@ struct trie{
 
     bool search_word(int current, string word){
         if (word.length() == 0) return true;
+        if (tdata[current][word[0] - 'a'] == INF) return false;
         return search_word(tdata[current][word[0] - 'a'], word.substr(1));
     }
 };
