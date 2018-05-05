@@ -1,6 +1,6 @@
-My solutions for `15-295: Competition Programming and Problem Solving, Spring 2018`
+# My solutions for `15-295: Competition Programming and Problem Solving, Spring 2018`
 
-# Dynamic Programming
+## Dynamic Programming
 Problems URL: [https://contest.cs.cmu.edu/295/s18/180117-problems.pdf](https://contest.cs.cmu.edu/295/s18/180117-problems.pdf)
 
 | Problem | Status |  CF link |
